@@ -1,5 +1,4 @@
-
-import PostsList from "./components/postsList";
+import { PostsList } from "./components/PostsList";
 
 export function PostsPage() {
   return (
