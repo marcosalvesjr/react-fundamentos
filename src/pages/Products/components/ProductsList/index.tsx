@@ -15,6 +15,7 @@ import {
   SelectValue,
 } from "@radix-ui/react-select";
 import { Input } from "@/components/ui/input";
+import ProductsTable from "./components/ProductTable";
 
 export default function ProductsList() {
   const [search, setSearch] = useState("");
@@ -63,25 +64,7 @@ export default function ProductsList() {
         </SelectContent>
       </Select>
       <Button onClick={() => onCleanFilters()}>Limpar filtros</Button>
-
-      <ul className="flex flex-col gap-5 w-full">
-        {filteredList.map((item: OfficeProduct) => (
-          <li className="h-auto w-[90%] flex items-center justify-between px-2 py-1 border border-zinc-500 rounded-md ">
-            <div className="flex flex-col items-center">
-              <span>Produto: {item.name}</span>
-            </div>
-            <div className="flex gap-4">
-              <Button variant={"default"}>
-                <Trash width={22} height={22} color="red" />
-              </Button>
-
-              <Button>
-                <Pencil width={22} height={22} color="green" />
-              </Button>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <ProductsTable products={filteredList} />
     </div>
   );
 }
