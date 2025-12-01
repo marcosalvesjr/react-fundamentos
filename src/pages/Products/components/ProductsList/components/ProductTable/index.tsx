@@ -18,9 +18,9 @@ export default function ProductsTable({ products }: Props) {
       <TableCaption>Tabela de produtos</TableCaption>
       <TableHeader className="bg-zinc-500">
         <TableRow>
-          <TableHead className="w-[100px]">Produto</TableHead>
+          <TableHead>Produto</TableHead>
           <TableHead>Tipo</TableHead>
-          <TableHead className="text-right">Quantidade</TableHead>
+          <TableHead className="">Quantidade</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -28,7 +28,7 @@ export default function ProductsTable({ products }: Props) {
           <TableRow>
             <TableCell className="font-medium">{product.name}</TableCell>
             <TableCell>{product.type}</TableCell>
-            <TableCell className="text-right">{product.quantity}</TableCell>
+            <TableCell>{product.quantity}</TableCell>
           </TableRow>
         ))}
       </TableBody>
